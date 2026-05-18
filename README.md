@@ -64,4 +64,8 @@ useEffect(() => {
 
 ## 👤 Author
 
+<<<<<<< HEAD
 - GitHub — [https://github.com/ShubhangiMishra215](#)
+=======
+- GitHub — [https://github.com/ShubhangiMishra215](#)
+>>>>>>> f1cc16e5161c05479d45a9c0a02e912eb558ecb1
