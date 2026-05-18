@@ -1,16 +1,67 @@
-# React + Vite
+# Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A feature-rich Todo App built with React and Tailwind CSS, with local storage persistence, sound effects, and real-time notifications.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🎯 Features
 
-## React Compiler
+Users are able to:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Add, edit, and delete tasks
+- Mark tasks as completed
+- Clear all completed tasks at once
+- See live stats — active, completed, and total tasks
+- View a progress bar tracking completion
+- Receive toast notifications on every action
+- Hear sound feedback on add, complete, update, and delete
+- Data persists across page refreshes via localStorage
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚙️ Built With
+
+- [React](https://react.dev/) — UI library with functional components and hooks
+- [Tailwind CSS](https://tailwindcss.com/) — utility-first CSS framework
+- localStorage — for data persistence across sessions
+
+---
+
+## 💡 What I Learned
+
+**localStorage with React** — syncing state to localStorage using `useEffect` with a load guard prevented overwriting saved data on mount.
+
+```jsx
+const [hasLoaded, setHasLoaded] = useState(false);
+
+useEffect(() => {
+  if (!hasLoaded) return;
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
+}, [todos, hasLoaded]);
+```
+
+**Component-based architecture** — splitting the app into focused components like `TodoList`, `StatsGrid`, `ClearButton`, and `Notification` kept the code clean and scalable.
+
+**Notification system** — building a reusable toast notification with `setTimeout` for auto-dismiss without any external library.
+
+---
+
+## 🚀 Continued Development
+
+- Add drag-and-drop to reorder tasks
+- Add filter tabs (All / Active / Completed)
+- Add due dates and priority levels
+- Animate notifications and task transitions
+- Write unit tests for core logic
+
+---
+
+## 🔗 Live Demo
+
+[https://react-todo-rho-one.vercel.app/](#)
+
+---
+
+## 👤 Author
+
+- GitHub — [https://github.com/ShubhangiMishra215](#)
